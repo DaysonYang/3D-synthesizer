@@ -1,3 +1,6 @@
+let audioStarted = false; // needed to get it to work in full screen mode. Add in the variable section
+
+
 let pg
 let pg1
 let pg2
@@ -20,6 +23,9 @@ function preload() {
   bass =loadSound ('bass.mp3')
 }
 function setup() {
+   getAudioContext().suspend(); // needed to get it to work in full screen mode. Add in setup
+	
+
    drum.loop();
    bass.loop();
    bass.amp(0);
@@ -143,6 +149,15 @@ function draw() {
  //test
   console.log(a,b,c,d,e,f);
 }
+function mousePressed() { // needed to get it to work in full screen mode. Add in mousePressed()
+    // Start audio on user gesture
+    if (!audioStarted) {
+        userStartAudio();
+        audioStarted = true;
+    }
+}
+
+
 function keyPressed() {
   //b
   if (key === 'b') {
