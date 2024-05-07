@@ -23,7 +23,7 @@ function preload() {
   bass =loadSound ('bass.mp3')
 }
 function setup() {
-	  let a = createA('https://editor.p5js.org/DaysonYang/sketches/5bilOz1pR','original code');
+let a = createA('https://editor.p5js.org/DaysonYang/sketches/5bilOz1pR','original code');
   a.position(25, 35);
    getAudioContext().suspend(); // needed to get it to work in full screen mode. Add in setup
 	
